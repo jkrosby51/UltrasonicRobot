@@ -7,7 +7,7 @@
 
 
 
-<img src="placeholder" alt="Design"
+<img src="https://github.com/jkrosby51/UltrasonicRobot/blob/main/images/UltraSonicRobot-Design.png" alt="Design"
 	title="Design" width="650" height="500" />
 
 **Code**
