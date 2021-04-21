@@ -27,7 +27,7 @@ int distanceMin = 0;
 int distance;
 int duration;
 int speed; //servo speed
-int obstacle = 0; //0 = clear path, 1 = object in the way
+bool obstacle = false;
 
 void setup() {
   Serial.begin(9600);
@@ -53,7 +53,7 @@ void loop() {
   if (distance >= distanceMax || distance <= distanceMin) {
     Serial.println("Target not found");
 
-    obstacle = 0;
+    obstacle = false;
   } else {
     Serial.print(distance);
     Serial.println(" cm");
@@ -61,10 +61,10 @@ void loop() {
     lWheel.detach();
     rWheel.detach();
     
-    obstacle = 1;
+    obstacle = true;
   }
 
-  if(obstacle == 0){
+  if(obstacle == false){
     Serial.println("Moving");
     
     lWheel.attach(servoPinL);
